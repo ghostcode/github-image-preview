@@ -2,6 +2,7 @@
   const isPreviewable = (img) => {
     if (!img.src) return false;
     if (img.naturalWidth > 0 && img.naturalWidth <= 1 && img.naturalHeight <= 1) return false;
+    if (img.dataset.component === "Avatar") return false;
     const parent = img.parentElement;
     if (!parent) return true;
     if (parent.tagName === "A") {
